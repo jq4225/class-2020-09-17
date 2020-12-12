@@ -27,13 +27,17 @@ en_fall_2020 <- en_fall_2020 %>%
   clean_names() %>%
   select(-instructor_full_name, -grad, -course_section_code, -non_degree, -x_reg, -vus, -employee, -withdraw, -total) %>%
   filter(u_grad >= 10) %>%
-  drop_na() %>%
-  arrange(desc(u_grad))
-
-top_course <- en_fall_2020 %>%
-  slice(1)
+  drop_na()
 
 en_fall_2020
+
+top_course <- en_fall_2020 %>%
+  arrange(desc(u_grad)) %>%
+  slice(1)
+
+top_course
+
+
 ```
 
 
